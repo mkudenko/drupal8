@@ -1,0 +1,20 @@
+#
+# Configuration for Drupal tesing on CircleCI.
+#
+# Running shell commands inside containers:
+# https://circleci.com/docs/docker#docker-exec
+#
+machine:
+  services:
+    - docker
+
+dependencies:
+  post:
+    - docker-compose up -d
+
+test:
+  pre:
+    - ./scripts/circleci-prep.sh
+    - ./scripts/fix-file-permissions.sh
+  override:
+    - ./scripts/circleci-run-tests.sh

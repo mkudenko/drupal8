@@ -1,0 +1,6 @@
+name: Touchcast Configuration
+type: module
+description: 'Provides generic config customisations.'
+package: Custom
+version: VERSION
+core: 8.x
